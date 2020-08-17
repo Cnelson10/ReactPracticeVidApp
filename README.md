@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Set Up YouTube API
+
+Create a folder named apis in your src folder. Create a file in this folder with the name youtube.js. Insert this code into the file:
+```
+import axios from "axios";
+
+const KEY = "YOUR_API_KEY_HERE";
+
+export default axios.create({
+  baseURL: "https://www.googleapis.com/youtube/v3",
+  params: {
+    part: "snippet",
+    type: "video",
+    maxResults: 5,
+    key: KEY,
+  },
+});
+```
+Make sure that you have installed axios in your project directory (e.g. npm install axios) and make an account to get your own YouTube API key and replace YOUR_API_KEY_HERE with this API key.
+
 ## Available Scripts
 
 In the project directory, you can run:
